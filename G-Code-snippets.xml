@@ -1,0 +1,198 @@
+<snippets namespace="" license="BSD" filetypes="G-Code" snippetlicense="public domain" authors="Fernand Veilleux" name="G-Code">
+ <script>
+    function subname() {
+      return document.fileName().toLowerCase().replace(/.ngc/, '');
+    }
+  </script>
+ <item>
+  <displayprefix></displayprefix>
+  <match>if endif</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(comment)
+o&lt;if0${0}>if [${condition}]
+	${cursor}
+o&lt;if0${0}> endif</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>if else endif</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(comment)
+o&lt;if0${0}> if [${condition}]
+	${cursor}
+o&lt;if0${0}> else
+	
+o&lt;if0${0}> endif</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>if elseif else endif</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(comment)
+o&lt;if0${0}> if [${condition}]
+	${cursor}
+o&lt;if0${0}> elseif [${else_condition}]
+	
+o&lt;if0${0}> else
+	
+o&lt;if0${0}> endif</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>do while</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(comment)
+o&lt;loop0${0}> do
+	${cursor}
+o&lt;loop0${0}> while [${condition}]</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>while endwhile</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(comment)
+o&lt;loop0${0}> while [${condition}]
+	${cursor}
+o&lt;loop0${0}> endwhile</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>repeat endrepeat</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(comment)
+o&lt;loop0${0}> repeat [${2}]
+	${cursor}
+o&lt;loop0${0}> endrepeat</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>break</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>o&lt;loop0${ }> break</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>continue</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>o&lt;loop0${ }> continue</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>sub endsub</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(CALL with [param1] [param2] [...])
+o&lt;${sn=subname()}> sub
+	${cursor}
+o&lt;${sn}> endsub</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>sub endsub (old version)</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(CALL with [param1] [param2] [...])
+o&lt;${sn`subname`}> sub
+	${cursor}
+o&lt;${sn}> endsub</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>return</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>o&lt;${subname()}> return</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>return (old version)</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>o&lt;${sn`subname`}> return</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>named param</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>#&lt;${name}> = [${cursor}]</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>print</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(print,${message})</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>debug</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(debug,${message})</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>msg</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(msg,${message})</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>axis,notify</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(AXIS,notify,${message})</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>probeopen</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(probeopen,${filename}.${txt})</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>probeclose</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(probeclose)</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>logopen</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(logopen,${filename}.${txt})</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>logappend</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(logappend,${filename}.${txt})</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>log</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(log,${message-to-log})</fillin>
+ </item>
+ <item>
+  <displayprefix></displayprefix>
+  <match>logclose</match>
+  <displaypostfix></displaypostfix>
+  <displayarguments></displayarguments>
+  <fillin>(logclose)</fillin>
+ </item>
+</snippets>
