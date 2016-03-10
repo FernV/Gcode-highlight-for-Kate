@@ -108,8 +108,8 @@
 				<RegExpr String="[oO][\s\t]*([\d]+|&lt;[^>]*&gt;)" attribute="O-word"/>
         <RegExpr String="[abcu-z][\s\t]*[+\-\d#\[.]" insensitive="1" lookAhead="1" context="coords"/>
         <RegExpr String="[abcu-z].*$" insensitive="1" attribute="Alert"/>
-        <RegExpr String="[deh-lpqr][\s\t]*[+\-\d#\[.]" insensitive="1" lookAhead="1" context="opts"/>
-        <RegExpr String="[deh-lpqr].*$" insensitive="1" attribute="Alert"/>
+        <RegExpr String="[deh-lpqr@^][\s\t]*[+\-\d#\[.]" insensitive="1" lookAhead="1" context="opts"/>
+        <RegExpr String="[deh-lpqr@^].*$" insensitive="1" attribute="Alert"/>
         <RegExpr String="[gG][\s\t]*[\d]+[\s\t]*[.]?[\s\t]*[\d]*" attribute="G-word"/>
         <RegExpr String="[gG][\s\t]*[\[#]" lookAhead="1" context="gword"/>
         <RegExpr String="[tsTS][\s\t]*[+\d#\[]" lookAhead="1" context="tools"/>
@@ -141,7 +141,7 @@
       </context>
       
       <context name="opts" attribute="Alert" lineEndContext="#pop">
-        <RegExpr String="[deh-lpqr]" insensitive="1" attribute="G-options" context="#pop"/>
+        <RegExpr String="[deh-lpqr@^]" insensitive="1" attribute="G-options" context="#pop"/>
       </context>
 
       <context name="parenthese" attribute="Alert" lineEndContext="#pop">

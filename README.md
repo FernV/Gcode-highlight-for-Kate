@@ -1,16 +1,18 @@
-# G-Code syntax highlighting and snippets for Kate
+# G-Code syntax highlighting/snippets for Kate
 
 This is the best tool to edit g-code files.
 
-Advantages of using Kate to edit g-code files are numerous.
-Just a few are it's ease of use and low learning curve,
-has versions for LINUX, WINDOWS and MAC,
-support code folding and is very easy to edit the
-syntaxing colors and snippets.
+A few advantages of using Kate to edit g-code files are :
+	supports code folding and completion,
+	has versions for LINUX, WINDOWS and MAC,
+	ease of editing the syntaxing colors and snippets
+	ease of use and learning curve
 
 G-Code syntax highlighter and snippets for Kate were developped with
 LinuxCNC in mind but should work with any g-code version.
+Some snippets and highlight are specific to LinuxCNC.
 
+--------------------------------------------------------------------------------
 
 1. Installation
 --------------------------------------------------------------------------------
@@ -26,37 +28,23 @@ LinuxCNC in mind but should work with any g-code version.
 
 2. Configuration
 --------------------------------------------------------------------------------
-	Start Kate
-	Select Settings->Configure Kate...
-	Select Application->Plugins
-	Check Code snippets
+1. Start Kate
+2. Select Settings->Configure Kate...
+3. Select Application->Plugins
+4. Check : use Code snippets
+5. Select Editor Component->Open/Save
+		Select Modes & Filetypes
+		Click New
+		Edit fields :
+			Name : G-Code
+			Section : Other
+			Highlighting : Other/G-Code
+			Indentation Mode : Normal
+			File extensions : *.ngc (or whatever as per your need)
+			MIME type : text/ngc
+			Priority : 0
 
-	Select Editor Component->Open/Save
-	Select Modes & Filetypes
-	Click New
-	Name : G-Code
-	Section : Other
-	Highlighting : Other/G-Code
-	Indentation Mode : Normal
-	File extensions : *.ngc (or what is your format)
-	MIME type : text/ngc
-	Priority : 0
+6. Click Apply/OK
+7. Restart Kate and open one of your files or the demos
 
-	Click Apply/OK
-	Restart Kate and open one of your files or the demos
-
-3. Suggestion
---------------------------------------------------------------------------------
-My recommendations for configuration are :
-	Plugins : documents, Search and replace
-	Appearance : Dynamic Word Wrap -> No
-	Editing/General : Static word wrap -> Yes; marker -> Yes; Auto Brackets -> Yes
-	Editing/Indentation : Indent using Tabulators;
-		Backspace key in leading blank space unindents
-		Action : Increase indentation level if in leading blank space
-	Auto Completion : Enable -> Yes
-	Open/Save : Encoding -> UTF-8
-
-4. Note
---------------------------------------------------------------------------------
-	You may delete snippets that are not supported by your Kate version - sub-endsub and return
+Note : you may delete snippets that are not supported by your Kate version - sub-endsub and return
