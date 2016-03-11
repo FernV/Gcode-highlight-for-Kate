@@ -12,6 +12,7 @@ G-Code syntax highlighter and snippets for Kate were developped with
 LinuxCNC in mind but should work with any g-code version.
 Some snippets and highlight are specific to LinuxCNC.
 
+Screenshots available at https://forum.linuxcnc.org/forum/40-subroutines-and-ngcgui/26578-linuxcnc-features-a-kind-of-ngcgui?start=300#70985
 --------------------------------------------------------------------------------
 
 1. Installation
