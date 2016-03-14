@@ -13,12 +13,12 @@
 	modify it under the terms of the GNU Library General Public
 	License as published by the Free Software Foundation; either
 	version 2 of the License, or (at your option) any later version.
-	
+
 	This library is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 	Library General Public License for more details.
-	
+
 	You should have received a copy of the GNU Library General Public
 	License along with this library; if not, write to the
 	Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
@@ -47,7 +47,7 @@
       <item>le</item>
       <item>mod</item>
     </list>
-		
+
     <list name="functions">
       <item>atan</item>
       <item>abs</item>
@@ -88,6 +88,7 @@
 
     <contexts>
       <context name="Alert" attribute="Alert" lineEndContext="#pop">
+        <RegExpr String="^[\s\t]*[nN][\s\t]*[\d]{1,5}" attribute="Line Number"/>
         <DetectSpaces attribute="Normal Text"/>
 				<DetectChar char="%" attribute="M-word"/>
 				<DetectChar char="[" attribute="Brackets"/>
@@ -116,30 +117,29 @@
         <RegExpr String="[fF][\s\t]*[+\d#\[.]" lookAhead="1" context="feed"/>
         <RegExpr String="[mM][\s\t]*[1][\s\t]*[\d][\s\t]*[\d]" attribute="M-word (user)"/>
         <RegExpr String="[mM][\s\t]*([\d][\s\t]*[\d]?|[+#\[])" lookAhead="1" context="mword"/>
-        <RegExpr String="^[\s\t]*[nN][\s\t]*[\d]{1,5}" attribute="Line Number"/>
         <RegExpr String=".*$" attribute="Alert"/>
       </context>
-      
+
       <context name="feed" attribute="Alert" lineEndContext="#pop">
         <RegExpr String="[fF]" attribute="Tool" context="#pop"/>
       </context>
-      
+
       <context name="tools" attribute="Alert" lineEndContext="#pop">
         <RegExpr String="[tsTS]" attribute="Tool" context="#pop"/>
       </context>
-      
+
       <context name="gword" attribute="Alert" lineEndContext="#pop">
         <RegExpr String="[gG]" attribute="G-word" context="#pop"/>
       </context>
-      
+
       <context name="mword" attribute="Alert" lineEndContext="#pop">
         <RegExpr String="[mM]" attribute="M-word" context="#pop"/>
       </context>
-      
+
       <context name="coords" attribute="Alert" lineEndContext="#pop">
         <RegExpr String="[abcu-z]" insensitive="1" attribute="Coordinate" context="#pop"/>
       </context>
-      
+
       <context name="opts" attribute="Alert" lineEndContext="#pop">
         <RegExpr String="[deh-lpqr@^]" insensitive="1" attribute="G-options" context="#pop"/>
       </context>
@@ -157,18 +157,18 @@
 				<RegExpr String="#[\s\t]*&lt;[^>]*&gt;" attribute="Param (local)" context="#pop"/>
         <RegExpr String="[#][\s\t]*[#][\s\t]*[#]+" lookAhead="1" context="alert"/>
         <RegExpr String="#[\s\t]*#[\s\t]*[&lt;\[]" lookAhead="1" context="hash2"/>
-				<RegExpr String="#[\s\t]*#" attribute="Param (local)" context="#pop"/>
+        <RegExpr String="#[\s\t]*#" attribute="Param (local)" context="#pop"/>
         <RegExpr String="#[\s\t]*\[" lookAhead="1" context="hash2"/>
       </context>
 
-      <context name="hash2" attribute= "Alert" lineEndContext="#pop">        
+      <context name="hash2" attribute= "Alert" lineEndContext="#pop">
         <RegExpr String="#" attribute="Param (local)" context="#pop#pop"/>
       </context>
 
       <context name="alert" attribute="Alert" lineEndContext="#pop">
-      </context>      
+      </context>
     </contexts>
-    
+
     <itemDatas>
       <itemData name="Normal Text" defStyleNum="dsNormal"/>
       <itemData name="Brackets" defStyleNum="dsNormal"/>
@@ -192,7 +192,7 @@
       <itemData name="Alert" defStyleNum="dsError"/>
     </itemDatas>
   </highlighting>
-  
+
   <general>
     <folding indentationsensitive="1"/>
     <comments>
