@@ -9,7 +9,7 @@ A few advantages of using Kate to edit g-code files are :
 	ease of use and learning curve
 
 G-Code syntax highlighter and snippets for Kate were developped with
-LinuxCNC in mind but should work with any g-code version.
+LinuxCNC in mind but should work with any gcode version.
 Some snippets and highlight are specific to LinuxCNC.
 
 Screenshots available at https://forum.linuxcnc.org/forum/40-subroutines-and-ngcgui/26578-linuxcnc-features-a-kind-of-ngcgui?start=300#70985
@@ -17,15 +17,17 @@ Screenshots available at https://forum.linuxcnc.org/forum/40-subroutines-and-ngc
 
 1. Installation
 --------------------------------------------------------------------------------
-1. Download gcodeHL.xml and G-Code-snippets.xml in the folder of your choice
+1. Download gcode.xml and G-Code-snippets.xml in the folder of your choice
 
-2. Copy gcodeHL.xml in
+2. Copy gcode.xml in
 	~/.kde/share/apps/katepart/syntax
 	(for windows use  C:\Users\%name%\AppData\Local\katepart5\syntax)
+	Create sub-dir if needed
 
 3. Copy G-Code-snippets.xml in
 	~/.kde/share/apps/ktexteditor_snippets/data
 	(for windows use  C:\Users\%name%\AppData\Local\ktexteditor_snippets\data)
+	Create sub-dir if needed
 
 2. Configuration
 --------------------------------------------------------------------------------
